@@ -8,6 +8,7 @@ public class PullRecord
     public DateTime Timestamp { get; set; }
     public Dictionary<string, string> SlotColors { get; set; } = new();
     public Dictionary<string, int> SlotCounters { get; set; } = new();
+    public string InputSource { get; set; } = "Click"; // "Click" or "Data"
 }
 
 public class GachaService
@@ -56,13 +57,10 @@ public class GachaService
         return slotSelections.All(x => x.Value != null);
     }
 
-    public void ConfirmPull()
+    public void ConfirmPull(string inputSource = "Click")
     {
-        if (!AreAllSlotSelected())
-            throw new InvalidOperationException("Not all slots are selected");
-
-        // Update counters based on selections
-        foreach (var slot in slotSelections)
+        // Update counters based on selections (only for selected slots)
+        foreach (var slot in slotSelections.Where(x => x.Value != null))
         {
             string slotName = slot.Key;
             string colorName = slot.Value!;
@@ -86,7 +84,8 @@ public class GachaService
             PullNumber = totalPulls,
             Timestamp = DateTime.Now,
             SlotColors = new Dictionary<string, string>(slotSelections.Where(x => x.Value != null).ToDictionary(x => x.Key, x => x.Value!)),
-            SlotCounters = new Dictionary<string, int>(slotCounters)
+            SlotCounters = new Dictionary<string, int>(slotCounters),
+            InputSource = inputSource
         };
 
         pullHistory.Add(record);
@@ -94,6 +93,25 @@ public class GachaService
 
         // Clear selections for next pull
         ClearSelections();
+    }
+
+    public void ConfirmDataPull(Dictionary<string, string?> dataSelections, Dictionary<string, int> dataCounts)
+    {
+        // Create and save pull record with user-provided counts
+        totalPulls++;
+        sessionPulls++;
+
+        PullRecord record = new PullRecord
+        {
+            PullNumber = totalPulls,
+            Timestamp = DateTime.Now,
+            SlotColors = new Dictionary<string, string>(dataSelections.Where(x => x.Value != null).ToDictionary(x => x.Key, x => x.Value!)),
+            SlotCounters = new Dictionary<string, int>(dataCounts.Where(x => dataSelections.ContainsKey(x.Key) && dataSelections[x.Key] != null)),
+            InputSource = "Data"
+        };
+
+        pullHistory.Add(record);
+        SavePullHistory();
     }
 
     public void ClearSelections()

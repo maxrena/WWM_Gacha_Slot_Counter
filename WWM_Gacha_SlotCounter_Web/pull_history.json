@@ -1,1 +1,902 @@
-[]
+[
+  {
+    "PullNumber": 1,
+    "Timestamp": "2026-01-16T22:47:27.4703681-06:00",
+    "SlotColors": {
+      "Slot1": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 1,
+      "Slot2": 0,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 2,
+    "Timestamp": "2026-01-16T22:47:31.6599039-06:00",
+    "SlotColors": {
+      "Slot1": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 2,
+      "Slot2": 0,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 3,
+    "Timestamp": "2026-01-16T22:47:34.8064601-06:00",
+    "SlotColors": {
+      "Slot1": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 3,
+      "Slot2": 0,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 4,
+    "Timestamp": "2026-01-16T22:47:37.067344-06:00",
+    "SlotColors": {
+      "Slot1": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 4,
+      "Slot2": 0,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 5,
+    "Timestamp": "2026-01-16T22:47:42.1670946-06:00",
+    "SlotColors": {
+      "Slot1": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 5,
+      "Slot2": 0,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 6,
+    "Timestamp": "2026-01-16T22:47:44.5298543-06:00",
+    "SlotColors": {
+      "Slot1": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 6,
+      "Slot2": 0,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 7,
+    "Timestamp": "2026-01-16T22:47:46.4389165-06:00",
+    "SlotColors": {
+      "Slot1": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 7,
+      "Slot2": 0,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 8,
+    "Timestamp": "2026-01-16T22:47:48.7420186-06:00",
+    "SlotColors": {
+      "Slot1": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 8,
+      "Slot2": 0,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 9,
+    "Timestamp": "2026-01-16T22:47:50.4476105-06:00",
+    "SlotColors": {
+      "Slot1": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 9,
+      "Slot2": 0,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 10,
+    "Timestamp": "2026-01-16T22:47:52.5874149-06:00",
+    "SlotColors": {
+      "Slot1": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 10,
+      "Slot2": 0,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 11,
+    "Timestamp": "2026-01-16T22:47:55.0852446-06:00",
+    "SlotColors": {
+      "Slot1": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 11,
+      "Slot2": 0,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 12,
+    "Timestamp": "2026-01-16T22:47:57.0801364-06:00",
+    "SlotColors": {
+      "Slot1": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 12,
+      "Slot2": 0,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 13,
+    "Timestamp": "2026-01-16T22:48:24.2912912-06:00",
+    "SlotColors": {
+      "Slot1": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 13,
+      "Slot2": 0,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 14,
+    "Timestamp": "2026-01-16T22:48:24.9551149-06:00",
+    "SlotColors": {},
+    "SlotCounters": {
+      "Slot1": 13,
+      "Slot2": 0,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 15,
+    "Timestamp": "2026-01-16T22:48:25.5597818-06:00",
+    "SlotColors": {},
+    "SlotCounters": {
+      "Slot1": 13,
+      "Slot2": 0,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 16,
+    "Timestamp": "2026-01-16T22:48:26.4366699-06:00",
+    "SlotColors": {},
+    "SlotCounters": {
+      "Slot1": 13,
+      "Slot2": 0,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 17,
+    "Timestamp": "2026-01-16T22:48:27.1798855-06:00",
+    "SlotColors": {},
+    "SlotCounters": {
+      "Slot1": 13,
+      "Slot2": 0,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 18,
+    "Timestamp": "2026-01-16T22:48:28.257157-06:00",
+    "SlotColors": {},
+    "SlotCounters": {
+      "Slot1": 13,
+      "Slot2": 0,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 19,
+    "Timestamp": "2026-01-16T22:48:29.6121414-06:00",
+    "SlotColors": {},
+    "SlotCounters": {
+      "Slot1": 13,
+      "Slot2": 0,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 20,
+    "Timestamp": "2026-01-16T22:48:30.4517476-06:00",
+    "SlotColors": {},
+    "SlotCounters": {
+      "Slot1": 13,
+      "Slot2": 0,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 21,
+    "Timestamp": "2026-01-16T22:49:00.237214-06:00",
+    "SlotColors": {
+      "Slot1": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 14,
+      "Slot2": 0,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 22,
+    "Timestamp": "2026-01-16T22:49:00.9400449-06:00",
+    "SlotColors": {},
+    "SlotCounters": {
+      "Slot1": 14,
+      "Slot2": 0,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 23,
+    "Timestamp": "2026-01-16T22:49:02.077104-06:00",
+    "SlotColors": {},
+    "SlotCounters": {
+      "Slot1": 14,
+      "Slot2": 0,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 24,
+    "Timestamp": "2026-01-16T22:49:04.3929859-06:00",
+    "SlotColors": {
+      "Slot1": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 15,
+      "Slot2": 0,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 25,
+    "Timestamp": "2026-01-16T22:49:05.8457002-06:00",
+    "SlotColors": {
+      "Slot1": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 16,
+      "Slot2": 0,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 26,
+    "Timestamp": "2026-01-16T22:49:07.2126434-06:00",
+    "SlotColors": {
+      "Slot1": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 17,
+      "Slot2": 0,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 27,
+    "Timestamp": "2026-01-16T22:49:09.0818134-06:00",
+    "SlotColors": {
+      "Slot1": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 18,
+      "Slot2": 0,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 28,
+    "Timestamp": "2026-01-16T22:49:11.0545891-06:00",
+    "SlotColors": {
+      "Slot1": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 19,
+      "Slot2": 0,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 29,
+    "Timestamp": "2026-01-16T22:49:12.409179-06:00",
+    "SlotColors": {
+      "Slot1": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 20,
+      "Slot2": 0,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 30,
+    "Timestamp": "2026-01-16T22:49:14.1696077-06:00",
+    "SlotColors": {
+      "Slot1": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 21,
+      "Slot2": 0,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 31,
+    "Timestamp": "2026-01-16T22:49:15.5648677-06:00",
+    "SlotColors": {
+      "Slot1": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 22,
+      "Slot2": 0,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 32,
+    "Timestamp": "2026-01-16T22:49:17.092748-06:00",
+    "SlotColors": {
+      "Slot1": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 23,
+      "Slot2": 0,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 33,
+    "Timestamp": "2026-01-16T22:49:19.0874308-06:00",
+    "SlotColors": {
+      "Slot1": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 24,
+      "Slot2": 0,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 34,
+    "Timestamp": "2026-01-16T22:49:21.4063509-06:00",
+    "SlotColors": {
+      "Slot1": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 25,
+      "Slot2": 0,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 35,
+    "Timestamp": "2026-01-16T22:49:23.1323608-06:00",
+    "SlotColors": {
+      "Slot1": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 26,
+      "Slot2": 0,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 36,
+    "Timestamp": "2026-01-16T22:49:24.8799734-06:00",
+    "SlotColors": {
+      "Slot1": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 27,
+      "Slot2": 0,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 37,
+    "Timestamp": "2026-01-16T22:49:55.8374251-06:00",
+    "SlotColors": {
+      "Slot1": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 28,
+      "Slot2": 0,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 38,
+    "Timestamp": "2026-01-16T22:49:58.1863136-06:00",
+    "SlotColors": {
+      "Slot1": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 29,
+      "Slot2": 0,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 39,
+    "Timestamp": "2026-01-16T22:50:00.3795435-06:00",
+    "SlotColors": {
+      "Slot1": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 30,
+      "Slot2": 0,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 40,
+    "Timestamp": "2026-01-16T22:50:03.7754848-06:00",
+    "SlotColors": {
+      "Slot1": "White",
+      "Slot2": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 31,
+      "Slot2": 1,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 41,
+    "Timestamp": "2026-01-16T22:50:06.2897374-06:00",
+    "SlotColors": {
+      "Slot1": "White",
+      "Slot2": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 32,
+      "Slot2": 2,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 42,
+    "Timestamp": "2026-01-16T22:50:08.2586723-06:00",
+    "SlotColors": {
+      "Slot1": "White",
+      "Slot2": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 33,
+      "Slot2": 3,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 43,
+    "Timestamp": "2026-01-16T22:50:18.1279451-06:00",
+    "SlotColors": {
+      "Slot1": "White",
+      "Slot2": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 34,
+      "Slot2": 4,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 44,
+    "Timestamp": "2026-01-16T22:50:22.4628939-06:00",
+    "SlotColors": {
+      "Slot1": "White",
+      "Slot2": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 35,
+      "Slot2": 5,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 45,
+    "Timestamp": "2026-01-16T22:50:25.0454655-06:00",
+    "SlotColors": {
+      "Slot1": "White",
+      "Slot2": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 36,
+      "Slot2": 6,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 46,
+    "Timestamp": "2026-01-16T22:50:27.3872297-06:00",
+    "SlotColors": {
+      "Slot1": "White",
+      "Slot2": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 37,
+      "Slot2": 7,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 47,
+    "Timestamp": "2026-01-16T22:50:29.7539942-06:00",
+    "SlotColors": {
+      "Slot1": "White",
+      "Slot2": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 38,
+      "Slot2": 8,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 48,
+    "Timestamp": "2026-01-16T22:50:31.9692713-06:00",
+    "SlotColors": {
+      "Slot1": "White",
+      "Slot2": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 39,
+      "Slot2": 9,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 49,
+    "Timestamp": "2026-01-16T22:50:34.5063202-06:00",
+    "SlotColors": {
+      "Slot1": "White",
+      "Slot2": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 40,
+      "Slot2": 10,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 50,
+    "Timestamp": "2026-01-16T22:50:37.5602014-06:00",
+    "SlotColors": {
+      "Slot1": "White",
+      "Slot2": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 41,
+      "Slot2": 11,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 51,
+    "Timestamp": "2026-01-16T22:50:40.1107279-06:00",
+    "SlotColors": {
+      "Slot1": "White",
+      "Slot2": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 42,
+      "Slot2": 12,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 52,
+    "Timestamp": "2026-01-16T22:50:43.0663904-06:00",
+    "SlotColors": {
+      "Slot1": "White",
+      "Slot2": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 43,
+      "Slot2": 13,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 53,
+    "Timestamp": "2026-01-16T22:50:45.4930875-06:00",
+    "SlotColors": {
+      "Slot1": "White",
+      "Slot2": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 44,
+      "Slot2": 14,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 54,
+    "Timestamp": "2026-01-16T22:50:47.7293472-06:00",
+    "SlotColors": {
+      "Slot1": "White",
+      "Slot2": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 45,
+      "Slot2": 15,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 55,
+    "Timestamp": "2026-01-16T22:50:49.8402739-06:00",
+    "SlotColors": {
+      "Slot1": "White",
+      "Slot2": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 46,
+      "Slot2": 16,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 56,
+    "Timestamp": "2026-01-16T22:50:52.1462865-06:00",
+    "SlotColors": {
+      "Slot1": "White",
+      "Slot2": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 47,
+      "Slot2": 17,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 57,
+    "Timestamp": "2026-01-16T22:50:58.5904453-06:00",
+    "SlotColors": {
+      "Slot1": "White",
+      "Slot2": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 48,
+      "Slot2": 18,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 58,
+    "Timestamp": "2026-01-16T22:51:06.5109375-06:00",
+    "SlotColors": {
+      "Slot1": "White",
+      "Slot2": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 49,
+      "Slot2": 19,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 59,
+    "Timestamp": "2026-01-16T22:51:10.3097828-06:00",
+    "SlotColors": {
+      "Slot1": "Gold",
+      "Slot2": "Gold"
+    },
+    "SlotCounters": {
+      "Slot1": 0,
+      "Slot2": 0,
+      "Slot3": 0,
+      "Slot4": 0,
+      "Slot5": 0
+    },
+    "InputSource": "Click"
+  },
+  {
+    "PullNumber": 60,
+    "Timestamp": "2026-01-16T23:58:23.0391252-06:00",
+    "SlotColors": {
+      "Slot1": "White",
+      "Slot2": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 20,
+      "Slot2": 15
+    },
+    "InputSource": "Data"
+  }
+]
