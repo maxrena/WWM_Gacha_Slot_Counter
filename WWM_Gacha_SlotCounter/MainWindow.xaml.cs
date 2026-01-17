@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using System.IO;
+using System.Text;
+using System.Text.Json;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -12,6 +14,17 @@ using System.Windows.Shapes;
 namespace WWM_Gacha_SlotCounter;
 
 /// <summary>
+/// Represents a single pull with all slot colors and counters
+/// </summary>
+public class PullRecord
+{
+    public int PullNumber { get; set; }
+    public DateTime Timestamp { get; set; }
+    public Dictionary<string, string> SlotColors { get; set; } = new();
+    public Dictionary<string, int> SlotCounters { get; set; } = new();
+}
+
+/// <summary>
 /// Interaction logic for MainWindow.xaml
 /// </summary>
 public partial class MainWindow : Window
@@ -21,11 +34,14 @@ public partial class MainWindow : Window
     private int sessionCount = 0;
     private Dictionary<string, string?> slotSelections = new();
     private Dictionary<string, int> slotCounters = new();
+    private List<PullRecord> pullHistory = new();
+    private const string HISTORY_FILE = "pull_history.json";
 
     public MainWindow()
     {
         InitializeComponent();
         InitializeSlots();
+        LoadPullHistory();
     }
 
     private void InitializeSlots()
@@ -74,19 +90,24 @@ public partial class MainWindow : Window
             resultBlock.Text = colorName;
             resultBlock.Foreground = new SolidColorBrush(Colors.Green);
         }
-    }
 
-    private void SlotCounter_Click(object sender, RoutedEventArgs e)
-    {
-        Button? button = sender as Button;
-        if (button == null) return;
-
-        string? slotName = button.Tag?.ToString();
-        if (string.IsNullOrEmpty(slotName)) return;
-
-        // Increment counter for this slot
-        slotCounters[slotName]++;
-        button.Content = $"Count: {slotCounters[slotName]}";
+        // Handle counter based on color
+        Button? counterButton = FindName($"{slotName}Counter") as Button;
+        if (counterButton != null)
+        {
+            if (colorName == "Gold")
+            {
+                // Reset counter to 0 for Gold
+                slotCounters[slotName] = 0;
+                counterButton.Content = "Count: 0";
+            }
+            else if (colorName == "White" || colorName == "Purple")
+            {
+                // Increment counter for White or Purple
+                slotCounters[slotName]++;
+                counterButton.Content = $"Count: {slotCounters[slotName]}";
+            }
+        }
     }
 
     private void ResetSlotButtons(string slotName)
@@ -116,9 +137,21 @@ public partial class MainWindow : Window
             return;
         }
 
-        // All slots selected - increment counter
+        // Create pull record with current selections and counters
         totalPulls++;
         sessionPulls++;
+
+        PullRecord record = new PullRecord
+        {
+            PullNumber = totalPulls,
+            Timestamp = DateTime.Now,
+            SlotColors = new Dictionary<string, string>(slotSelections.Where(x => x.Value != null).ToDictionary(x => x.Key, x => x.Value!)),
+            SlotCounters = new Dictionary<string, int>(slotCounters)
+        };
+
+        pullHistory.Add(record);
+        SavePullHistory();
+
         UpdateDisplay();
         
         // Clear selections for next pull
@@ -178,6 +211,46 @@ public partial class MainWindow : Window
         else
         {
             AveragePulls.Text = "0";
+        }
+    }
+
+    private void SavePullHistory()
+    {
+        try
+        {
+            var options = new JsonSerializerOptions
+            {
+                WriteIndented = true
+            };
+
+            string json = JsonSerializer.Serialize(pullHistory, options);
+            File.WriteAllText(HISTORY_FILE, json);
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show($"Error saving pull history: {ex.Message}", "Save Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+        }
+    }
+
+    private void LoadPullHistory()
+    {
+        try
+        {
+            if (File.Exists(HISTORY_FILE))
+            {
+                string json = File.ReadAllText(HISTORY_FILE);
+                var loaded = JsonSerializer.Deserialize<List<PullRecord>>(json);
+                if (loaded != null)
+                {
+                    pullHistory = loaded;
+                    totalPulls = pullHistory.Count;
+                    UpdateDisplay();
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show($"Error loading pull history: {ex.Message}", "Load Error", MessageBoxButton.OK, MessageBoxImage.Warning);
         }
     }
 }

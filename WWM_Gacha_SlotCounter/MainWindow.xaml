@@ -86,7 +86,7 @@
                         <Button x:Name="Slot1Purple" Content="🟣 Purple" Click="SlotColorClicked" Padding="12,8" Margin="0,0,8,0" Background="#E8D5F2" BorderBrush="#999999" BorderThickness="1" Cursor="Hand" Tag="Slot1"/>
                         <Button x:Name="Slot1Gold" Content="🟡 Gold" Click="SlotColorClicked" Padding="12,8" Margin="0,0,8,0" Background="#FFD700" BorderBrush="#999999" BorderThickness="1" Cursor="Hand" Tag="Slot1"/>
                         <TextBlock x:Name="Slot1Result" Text="Select" Foreground="#999999" Margin="15,0,0,0" VerticalAlignment="Center" FontWeight="Bold" MinWidth="80"/>
-                        <Button x:Name="Slot1Counter" Content="Count: 0" Click="SlotCounter_Click" Padding="12,8" Margin="15,0,0,0" Background="#F0F0F0" BorderBrush="#999999" BorderThickness="1" Cursor="Hand" Tag="Slot1"/>
+                        <Button x:Name="Slot1Counter" Content="Count: 0" Padding="12,8" Margin="15,0,0,0" Background="#F0F0F0" BorderBrush="#999999" BorderThickness="1" Cursor="Hand" IsEnabled="False"/>
                     </StackPanel>
                     
                     <!-- Slot 2 -->
@@ -96,7 +96,7 @@
                         <Button x:Name="Slot2Purple" Content="🟣 Purple" Click="SlotColorClicked" Padding="12,8" Margin="0,0,8,0" Background="#E8D5F2" BorderBrush="#999999" BorderThickness="1" Cursor="Hand" Tag="Slot2"/>
                         <Button x:Name="Slot2Gold" Content="🟡 Gold" Click="SlotColorClicked" Padding="12,8" Margin="0,0,8,0" Background="#FFD700" BorderBrush="#999999" BorderThickness="1" Cursor="Hand" Tag="Slot2"/>
                         <TextBlock x:Name="Slot2Result" Text="Select" Foreground="#999999" Margin="15,0,0,0" VerticalAlignment="Center" FontWeight="Bold" MinWidth="80"/>
-                        <Button x:Name="Slot2Counter" Content="Count: 0" Click="SlotCounter_Click" Padding="12,8" Margin="15,0,0,0" Background="#F0F0F0" BorderBrush="#999999" BorderThickness="1" Cursor="Hand" Tag="Slot2"/>
+                        <Button x:Name="Slot2Counter" Content="Count: 0" Padding="12,8" Margin="15,0,0,0" Background="#F0F0F0" BorderBrush="#999999" BorderThickness="1" Cursor="Hand" IsEnabled="False"/>
                     </StackPanel>
                     
                     <!-- Slot 3 -->
@@ -106,7 +106,7 @@
                         <Button x:Name="Slot3Purple" Content="🟣 Purple" Click="SlotColorClicked" Padding="12,8" Margin="0,0,8,0" Background="#E8D5F2" BorderBrush="#999999" BorderThickness="1" Cursor="Hand" Tag="Slot3"/>
                         <Button x:Name="Slot3Gold" Content="🟡 Gold" Click="SlotColorClicked" Padding="12,8" Margin="0,0,8,0" Background="#FFD700" BorderBrush="#999999" BorderThickness="1" Cursor="Hand" Tag="Slot3"/>
                         <TextBlock x:Name="Slot3Result" Text="Select" Foreground="#999999" Margin="15,0,0,0" VerticalAlignment="Center" FontWeight="Bold" MinWidth="80"/>
-                        <Button x:Name="Slot3Counter" Content="Count: 0" Click="SlotCounter_Click" Padding="12,8" Margin="15,0,0,0" Background="#F0F0F0" BorderBrush="#999999" BorderThickness="1" Cursor="Hand" Tag="Slot3"/>
+                        <Button x:Name="Slot3Counter" Content="Count: 0" Padding="12,8" Margin="15,0,0,0" Background="#F0F0F0" BorderBrush="#999999" BorderThickness="1" Cursor="Hand" IsEnabled="False"/>
                     </StackPanel>
                     
                     <!-- Slot 4 -->
@@ -116,7 +116,7 @@
                         <Button x:Name="Slot4Purple" Content="🟣 Purple" Click="SlotColorClicked" Padding="12,8" Margin="0,0,8,0" Background="#E8D5F2" BorderBrush="#999999" BorderThickness="1" Cursor="Hand" Tag="Slot4"/>
                         <Button x:Name="Slot4Gold" Content="🟡 Gold" Click="SlotColorClicked" Padding="12,8" Margin="0,0,8,0" Background="#FFD700" BorderBrush="#999999" BorderThickness="1" Cursor="Hand" Tag="Slot4"/>
                         <TextBlock x:Name="Slot4Result" Text="Select" Foreground="#999999" Margin="15,0,0,0" VerticalAlignment="Center" FontWeight="Bold" MinWidth="80"/>
-                        <Button x:Name="Slot4Counter" Content="Count: 0" Click="SlotCounter_Click" Padding="12,8" Margin="15,0,0,0" Background="#F0F0F0" BorderBrush="#999999" BorderThickness="1" Cursor="Hand" Tag="Slot4"/>
+                        <Button x:Name="Slot4Counter" Content="Count: 0" Padding="12,8" Margin="15,0,0,0" Background="#F0F0F0" BorderBrush="#999999" BorderThickness="1" Cursor="Hand" IsEnabled="False"/>
                     </StackPanel>
                     
                     <!-- Slot 5 -->
@@ -126,7 +126,7 @@
                         <Button x:Name="Slot5Purple" Content="🟣 Purple" Click="SlotColorClicked" Padding="12,8" Margin="0,0,8,0" Background="#E8D5F2" BorderBrush="#999999" BorderThickness="1" Cursor="Hand" Tag="Slot5"/>
                         <Button x:Name="Slot5Gold" Content="🟡 Gold" Click="SlotColorClicked" Padding="12,8" Margin="0,0,8,0" Background="#FFD700" BorderBrush="#999999" BorderThickness="1" Cursor="Hand" Tag="Slot5"/>
                         <TextBlock x:Name="Slot5Result" Text="Select" Foreground="#999999" Margin="15,0,0,0" VerticalAlignment="Center" FontWeight="Bold" MinWidth="80"/>
-                        <Button x:Name="Slot5Counter" Content="Count: 0" Click="SlotCounter_Click" Padding="12,8" Margin="15,0,0,0" Background="#F0F0F0" BorderBrush="#999999" BorderThickness="1" Cursor="Hand" Tag="Slot5"/>
+                        <Button x:Name="Slot5Counter" Content="Count: 0" Padding="12,8" Margin="15,0,0,0" Background="#F0F0F0" BorderBrush="#999999" BorderThickness="1" Cursor="Hand" IsEnabled="False"/>
                     </StackPanel>
                 </StackPanel>
             </Border>
