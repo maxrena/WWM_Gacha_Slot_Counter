@@ -208,10 +208,22 @@
                         <Run FontWeight="Bold">Session Pulls:</Run>
                         <Run x:Name="SessionPulls">0</Run>
                     </TextBlock>
-                    <TextBlock Foreground="#34495E">
+                    <TextBlock Foreground="#34495E" Margin="0,0,0,15">
                         <Run FontWeight="Bold">Average per session:</Run>
                         <Run x:Name="AveragePulls">0</Run>
                     </TextBlock>
+                    
+                    <!-- Pull History Log -->
+                    <TextBlock 
+                        Text="📝 Pull Log"
+                        FontSize="14"
+                        FontWeight="Bold"
+                        Foreground="#2C3E50"
+                        Margin="0,0,0,10"/>
+                    
+                    <ScrollViewer MaxHeight="200" VerticalScrollBarVisibility="Auto" Margin="0,0,0,0">
+                        <StackPanel x:Name="PullHistoryPanel" Background="#F9F9F9" Margin="10"/>
+                    </ScrollViewer>
                 </StackPanel>
             </Border>
         </StackPanel>

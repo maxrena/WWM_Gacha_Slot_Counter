@@ -73,7 +73,7 @@ public partial class MainWindow : Window
 
         if (colorName == null) return;
 
-        // Store selection
+        // Store selection (don't update counters yet - wait for Confirm)
         slotSelections[slotName] = colorName;
 
         // Update UI - reset all buttons for this slot
@@ -89,24 +89,6 @@ public partial class MainWindow : Window
         {
             resultBlock.Text = colorName;
             resultBlock.Foreground = new SolidColorBrush(Colors.Green);
-        }
-
-        // Handle counter based on color
-        Button? counterButton = FindName($"{slotName}Counter") as Button;
-        if (counterButton != null)
-        {
-            if (colorName == "Gold")
-            {
-                // Reset counter to 0 for Gold
-                slotCounters[slotName] = 0;
-                counterButton.Content = "Count: 0";
-            }
-            else if (colorName == "White" || colorName == "Purple")
-            {
-                // Increment counter for White or Purple
-                slotCounters[slotName]++;
-                counterButton.Content = $"Count: {slotCounters[slotName]}";
-            }
         }
     }
 
@@ -137,6 +119,24 @@ public partial class MainWindow : Window
             return;
         }
 
+        // Update counters based on selections BEFORE saving
+        foreach (var slot in slotSelections)
+        {
+            string slotName = slot.Key;
+            string colorName = slot.Value!;
+
+            if (colorName == "Gold")
+            {
+                // Reset counter to 0 for Gold
+                slotCounters[slotName] = 0;
+            }
+            else if (colorName == "White" || colorName == "Purple")
+            {
+                // Increment counter for White or Purple
+                slotCounters[slotName]++;
+            }
+        }
+
         // Create pull record with current selections and counters
         totalPulls++;
         sessionPulls++;
@@ -152,7 +152,19 @@ public partial class MainWindow : Window
         pullHistory.Add(record);
         SavePullHistory();
 
+        // Update display with new counters
+        for (int i = 1; i <= 5; i++)
+        {
+            string slotName = $"Slot{i}";
+            Button? counterButton = FindName($"{slotName}Counter") as Button;
+            if (counterButton != null)
+            {
+                counterButton.Content = $"Count: {slotCounters[slotName]}";
+            }
+        }
+
         UpdateDisplay();
+        RefreshPullHistory();
         
         // Clear selections for next pull
         ClearSlotSelections();
@@ -214,6 +226,30 @@ public partial class MainWindow : Window
         }
     }
 
+    private void RefreshPullHistory()
+    {
+        PullHistoryPanel.Children.Clear();
+
+        // Show pull history in reverse order (newest first)
+        for (int i = pullHistory.Count - 1; i >= 0; i--)
+        {
+            var record = pullHistory[i];
+            string timestamp = record.Timestamp.ToString("yyyy-MM-dd HH:mm:ss");
+            
+            string colorsInfo = string.Join(", ", record.SlotColors.OrderBy(x => x.Key).Select(x => $"{x.Key}: {x.Value}"));
+            
+            TextBlock logEntry = new TextBlock
+            {
+                Text = $"Pull #{record.PullNumber} ({timestamp}) - {colorsInfo}",
+                Foreground = new SolidColorBrush(Color.FromRgb(0x34, 0x49, 0x5E)),
+                Margin = new Thickness(0, 5, 0, 0),
+                TextWrapping = TextWrapping.Wrap
+            };
+            
+            PullHistoryPanel.Children.Add(logEntry);
+        }
+    }
+
     private void SavePullHistory()
     {
         try
@@ -245,6 +281,7 @@ public partial class MainWindow : Window
                     pullHistory = loaded;
                     totalPulls = pullHistory.Count;
                     UpdateDisplay();
+                    RefreshPullHistory();
                 }
             }
         }
