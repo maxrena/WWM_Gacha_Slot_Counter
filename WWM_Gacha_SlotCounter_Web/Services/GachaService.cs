@@ -109,6 +109,16 @@ public class GachaService
         ClearSelections();
     }
 
+    public void ResetAll()
+    {
+        totalPulls = 0;
+        sessionPulls = 0;
+        sessionCount = 0;
+        pullHistory.Clear();
+        InitializeSlots();
+        SavePullHistory();
+    }
+
     public int GetTotalPulls()
     {
         return totalPulls;

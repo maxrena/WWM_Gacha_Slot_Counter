@@ -155,7 +155,7 @@
             int counter = GachaService.GetSlotCounter(slotName);
 
             <div class="slot-row">
-                <label class="slot-label">@slotName:</label>
+                <label class="slot-label">Slot @slotIndex:</label>
                 
                 <button class="color-button @(selected == "White" ? "selected" : "")" 
                         @onclick="@(() => SelectColor(slotName, "White"))">
@@ -191,6 +191,13 @@
         <div></div>
         <button class="action-button back-button" @onclick="HandleBack">
             ⬅️ Back
+        </button>
+    </div>
+
+    <!-- Reset Button -->
+    <div style="margin-bottom: 20px;">
+        <button style="width: 100%; padding: 15px; font-size: 16px; font-weight: bold; background: #E74C3C; color: white; border: none; border-radius: 10px; cursor: pointer;" @onclick="HandleReset">
+            🔄 Reset All
         </button>
     </div>
 
@@ -259,5 +266,16 @@
     {
         GachaService.BackClick();
         StateHasChanged();
+    }
+
+    private async Task HandleReset()
+    {
+        bool confirmed = await JS.InvokeAsync<bool>("confirm", "Are you sure you want to reset all pulls and counters?");
+        if (confirmed)
+        {
+            GachaService.ResetAll();
+            StateHasChanged();
+            await JS.InvokeVoidAsync("alert", "✅ All data reset!");
+        }
     }
 }
