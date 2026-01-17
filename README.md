@@ -1,11 +1,11 @@
 # Where Gacha Meets - Slot Counter 🎰
 
-A Windows WPF application for tracking gacha game pulls with an interactive slot machine interface.
+A web application for tracking gacha game pulls with an interactive slot machine interface.
 
 **Made by your beloved Will - MaiMaiYeuEm** ❤️
 
 ## Version
-1.0.0
+2.0.0 - Now Available as Web App! 🚀
 
 ## Features
 
@@ -16,24 +16,40 @@ A Windows WPF application for tracking gacha game pulls with an interactive slot
 
 📊 **Pull Tracking**
 - Count total pulls across all sessions
-- Track individual slot counters
+- Track individual slot counters with smart logic:
+  - White/Purple: Counter increments on confirm
+  - Gold: Counter resets to 0 on confirm
 - Session-based statistics
 - Average pulls per session calculation
 
+📝 **Pull History & Statistics**
+- Detailed pull log showing which color each slot received
+- Timestamp for each pull
+- Persistent JSON storage of all pull data
+- Real-time statistics display
+
+🌐 **Web-Based (v2.0)**
+- ASP.NET Core Blazor Server application
+- Full-featured web interface matching desktop version
+- Interactive real-time updates
+- Responsive design for any screen size
+- Access from any browser
+
 🔧 **User-Friendly Interface**
-- Clean, modern WPF design with intuitive controls
+- Clean, modern design with intuitive controls
 - Color-coded buttons for easy interaction
 - Real-time statistics updates
 - Confirmation system before recording pulls
+- Back button to clear selections without losing counters
 
 ## Getting Started
 
 ### Prerequisites
-- Windows 10 or later
 - .NET 10.0 SDK or later
-- Visual Studio 2022 or VS Code (optional, for development)
+- A modern web browser (Chrome, Firefox, Safari, Edge)
+- Git (for cloning the repository)
 
-### Installation
+### Installation & Running the Web App (v2.0)
 
 1. **Clone the repository**
    ```bash
@@ -41,16 +57,29 @@ A Windows WPF application for tracking gacha game pulls with an interactive slot
    cd WWM_Gacha_Slot_Counter
    ```
 
-2. **Build the project**
+2. **Navigate to the web project**
    ```bash
-   cd WWM_Gacha_SlotCounter
-   dotnet build
+   cd WWM_Gacha_SlotCounter_Web
    ```
 
-3. **Run the application**
+3. **Build and run**
    ```bash
    dotnet run
    ```
+
+4. **Access the application**
+   - Open your web browser
+   - Go to: `http://localhost:5199`
+   - Start tracking your gacha pulls!
+
+### Running the Legacy Desktop App (v1.0)
+
+If you prefer the standalone WPF version:
+
+```bash
+cd WWM_Gacha_SlotCounter
+dotnet run
+```
 
 ## How to Use
 
@@ -60,8 +89,6 @@ A Windows WPF application for tracking gacha game pulls with an interactive slot
    - Click on ⚪ White, 🟣 Purple, or 🟡 Gold button for each slot (1-5)
    - Selected color will be highlighted with a bold border
    - Color name appears next to the slot
-
-2. **Count Individual Slots** (Optional)
    - Click the "Count: X" button for any slot to increment its counter
    - Useful for tracking rare results or patterns
 
