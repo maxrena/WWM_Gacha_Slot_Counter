@@ -106,5 +106,23 @@
       "Slot4": 1,
       "Slot5": 1
     }
+  },
+  {
+    "PullNumber": 7,
+    "Timestamp": "2026-01-16T22:28:08.6031262-06:00",
+    "SlotColors": {
+      "Slot1": "Purple",
+      "Slot2": "Purple",
+      "Slot3": "White",
+      "Slot4": "White",
+      "Slot5": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 1,
+      "Slot2": 1,
+      "Slot3": 1,
+      "Slot4": 1,
+      "Slot5": 1
+    }
   }
 ]

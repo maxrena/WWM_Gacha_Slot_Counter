@@ -1,0 +1,263 @@
+@page "/"
+@using WWM_Gacha_SlotCounter_Web.Services
+@inject GachaService GachaService
+@inject IJSRuntime JS
+@rendermode InteractiveServer
+
+<style>
+    body {
+        background: #F5F5F5;
+    }
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    .title-section {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .title-section h1 {
+        font-size: 48px;
+        color: #2C3E50;
+        margin: 0;
+    }
+    .title-section p {
+        color: #7F8C8D;
+        margin: 10px 0;
+    }
+    .card {
+        background: white;
+        border-radius: 15px;
+        padding: 20px;
+        margin-bottom: 20px;
+        border: 1px solid #E0E0E0;
+    }
+    .counter-display {
+        text-align: center;
+        padding: 30px;
+    }
+    .counter-display .label {
+        color: #7F8C8D;
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+    .counter-display .value {
+        font-size: 72px;
+        font-weight: bold;
+        color: #E74C3C;
+    }
+    .slot-row {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    .slot-label {
+        font-weight: bold;
+        color: #2C3E50;
+        width: 70px;
+    }
+    .color-button {
+        padding: 12px 8px;
+        border: 2px solid #999999;
+        border-radius: 5px;
+        cursor: pointer;
+        background: white;
+        font-size: 14px;
+    }
+    .color-button.selected {
+        border: 3px solid black;
+    }
+    .slot-result {
+        min-width: 80px;
+        font-weight: bold;
+        color: #999999;
+        margin-left: 15px;
+    }
+    .slot-result.selected {
+        color: #27AE60;
+    }
+    .counter-button {
+        padding: 12px;
+        margin-left: 15px;
+        background: #F0F0F0;
+        border: 1px solid #999999;
+        border-radius: 5px;
+        cursor: not-allowed;
+    }
+    .action-buttons {
+        display: grid;
+        grid-template-columns: 1fr 10px 1fr;
+        gap: 0;
+        margin-bottom: 20px;
+    }
+    .action-button {
+        padding: 20px 15px;
+        font-size: 18px;
+        font-weight: bold;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    .confirm-button {
+        background: #3498DB;
+    }
+    .back-button {
+        background: #E67E22;
+    }
+    .stats-label {
+        margin-bottom: 15px;
+        color: #34495E;
+    }
+    .pull-log {
+        background: #F9F9F9;
+        padding: 10px;
+        max-height: 200px;
+        overflow-y: auto;
+        border-radius: 8px;
+    }
+    .pull-entry {
+        margin-bottom: 8px;
+        color: #34495E;
+        font-size: 14px;
+    }
+    .no-pulls {
+        color: #999999;
+    }
+</style>
+
+<div class="container">
+    <!-- Title -->
+    <div class="title-section">
+        <h1>Where Gacha Meets - Slot Counter</h1>
+        <p>Made by your beloved Will - MaiMaiYeuEm</p>
+        <p>Track your gacha pulls and luck</p>
+    </div>
+
+    <!-- Counter Display -->
+    <div class="card counter-display">
+        <div class="label">Total Pulls</div>
+        <div class="value">@GachaService.GetTotalPulls()</div>
+    </div>
+
+    <!-- Slots Section -->
+    <div class="card">
+        <h2 style="margin-top: 0; color: #2C3E50;">🎰 Slot Results</h2>
+
+        @for (int i = 1; i <= 5; i++)
+        {
+            int slotIndex = i;
+            string slotName = $"Slot{slotIndex}";
+            string? selected = GachaService.GetSlotSelection(slotName);
+            int counter = GachaService.GetSlotCounter(slotName);
+
+            <div class="slot-row">
+                <label class="slot-label">@slotName:</label>
+                
+                <button class="color-button @(selected == "White" ? "selected" : "")" 
+                        @onclick="@(() => SelectColor(slotName, "White"))">
+                    ⚪ White
+                </button>
+                
+                <button class="color-button @(selected == "Purple" ? "selected" : "")" 
+                        @onclick="@(() => SelectColor(slotName, "Purple"))">
+                    🟣 Purple
+                </button>
+                
+                <button class="color-button @(selected == "Gold" ? "selected" : "")" 
+                        @onclick="@(() => SelectColor(slotName, "Gold"))">
+                    🟡 Gold
+                </button>
+                
+                <span class="slot-result @(selected != null ? "selected" : "")">
+                    @(selected ?? "Select")
+                </span>
+                
+                <button disabled class="counter-button">
+                    Count: @counter
+                </button>
+            </div>
+        }
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="action-buttons">
+        <button class="action-button confirm-button" @onclick="HandleConfirm">
+            ✅ Confirm
+        </button>
+        <div></div>
+        <button class="action-button back-button" @onclick="HandleBack">
+            ⬅️ Back
+        </button>
+    </div>
+
+    <!-- Statistics Section -->
+    <div class="card">
+        <h2 style="margin-top: 0; color: #2C3E50;">📊 Statistics</h2>
+        
+        <div class="stats-label">
+            <strong>Session Pulls:</strong> @GachaService.GetSessionPulls()
+        </div>
+        
+        <div class="stats-label">
+            <strong>Average per session:</strong> @GachaService.GetAveragePulls().ToString("F1")
+        </div>
+
+        <!-- Pull History Log -->
+        <h3 style="color: #2C3E50; margin-top: 20px;">📝 Pull Log</h3>
+        
+        <div class="pull-log">
+            @if (GachaService.GetPullHistory().Count == 0)
+            {
+                <div class="no-pulls">No pulls recorded yet</div>
+            }
+            else
+            {
+                @foreach (var record in GachaService.GetPullHistory())
+                {
+                    string colorsInfo = string.Join(", ", record.SlotColors.OrderBy(x => x.Key).Select(x => $"{x.Key}: {x.Value}"));
+                    <div class="pull-entry">
+                        Pull #@record.PullNumber (@record.Timestamp.ToString("yyyy-MM-dd HH:mm:ss")) - @colorsInfo
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+@code {
+    private void SelectColor(string slotName, string colorName)
+    {
+        GachaService.SelectColor(slotName, colorName);
+        StateHasChanged();
+    }
+
+    private async Task HandleConfirm()
+    {
+        try
+        {
+            if (!GachaService.AreAllSlotSelected())
+            {
+                await JS.InvokeVoidAsync("alert", "Please select a color for all slots before confirming!");
+                return;
+            }
+
+            GachaService.ConfirmPull();
+            StateHasChanged();
+            await JS.InvokeVoidAsync("alert", "✅ Pull confirmed!");
+        }
+        catch (Exception ex)
+        {
+            await JS.InvokeVoidAsync("alert", $"Error: {ex.Message}");
+        }
+    }
+
+    private void HandleBack()
+    {
+        GachaService.BackClick();
+        StateHasChanged();
+    }
+}
