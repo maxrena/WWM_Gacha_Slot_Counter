@@ -163,12 +163,12 @@
                     </Button.Template>
                 </Button>
                 
-                <!-- Reset Button -->
+                <!-- Back Button -->
                 <Button 
                     Grid.Column="2"
-                    x:Name="ResetButton"
-                    Content="🔄 Reset"
-                    Click="ResetButton_Click"
+                    x:Name="BackButton"
+                    Content="⬅️ Back"
+                    Click="BackButton_Click"
                     Padding="20,15"
                     FontSize="18"
                     FontWeight="Bold"

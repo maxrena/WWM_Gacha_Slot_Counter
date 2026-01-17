@@ -175,8 +175,8 @@ public partial class MainWindow : Window
     private void ClearSlotSelections()
     {
         slotSelections.Clear();
-        slotCounters.Clear();
-        InitializeSlots();
+        // DO NOT clear slotCounters - they should persist across pulls
+        InitializeSlots(); // This just clears selections, not counters
         
         for (int i = 1; i <= 5; i++)
         {
@@ -190,24 +190,19 @@ public partial class MainWindow : Window
                 resultBlock.Foreground = new SolidColorBrush(Color.FromRgb(0x99, 0x99, 0x99));
             }
 
+            // Update counter display to show current value
             Button? counterButton = FindName($"{slotName}Counter") as Button;
             if (counterButton != null)
             {
-                counterButton.Content = "Count: 0";
+                counterButton.Content = $"Count: {slotCounters[slotName]}";
             }
         }
     }
 
-    private void ResetButton_Click(object sender, RoutedEventArgs e)
+    private void BackButton_Click(object sender, RoutedEventArgs e)
     {
-        if (sessionPulls > 0)
-        {
-            sessionCount++;
-        }
-
-        sessionPulls = 0;
+        // Clear current selections and go back to slot selection
         ClearSlotSelections();
-        UpdateDisplay();
     }
 
     private void UpdateDisplay()

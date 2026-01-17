@@ -34,5 +34,77 @@
       "Slot4": 1,
       "Slot5": 1
     }
+  },
+  {
+    "PullNumber": 3,
+    "Timestamp": "2026-01-16T22:25:31.8570093-06:00",
+    "SlotColors": {
+      "Slot1": "Purple",
+      "Slot2": "Purple",
+      "Slot3": "White",
+      "Slot4": "Purple",
+      "Slot5": "Purple"
+    },
+    "SlotCounters": {
+      "Slot1": 1,
+      "Slot2": 1,
+      "Slot3": 1,
+      "Slot4": 1,
+      "Slot5": 1
+    }
+  },
+  {
+    "PullNumber": 4,
+    "Timestamp": "2026-01-16T22:25:53.2544656-06:00",
+    "SlotColors": {
+      "Slot1": "Purple",
+      "Slot2": "Purple",
+      "Slot3": "Purple",
+      "Slot4": "White",
+      "Slot5": "White"
+    },
+    "SlotCounters": {
+      "Slot1": 1,
+      "Slot2": 1,
+      "Slot3": 1,
+      "Slot4": 1,
+      "Slot5": 1
+    }
+  },
+  {
+    "PullNumber": 5,
+    "Timestamp": "2026-01-16T22:26:04.5043205-06:00",
+    "SlotColors": {
+      "Slot1": "White",
+      "Slot2": "White",
+      "Slot3": "Purple",
+      "Slot4": "Purple",
+      "Slot5": "Purple"
+    },
+    "SlotCounters": {
+      "Slot1": 1,
+      "Slot2": 1,
+      "Slot3": 1,
+      "Slot4": 1,
+      "Slot5": 1
+    }
+  },
+  {
+    "PullNumber": 6,
+    "Timestamp": "2026-01-16T22:27:37.6716611-06:00",
+    "SlotColors": {
+      "Slot1": "Purple",
+      "Slot2": "Purple",
+      "Slot3": "White",
+      "Slot4": "White",
+      "Slot5": "Purple"
+    },
+    "SlotCounters": {
+      "Slot1": 1,
+      "Slot2": 1,
+      "Slot3": 1,
+      "Slot4": 1,
+      "Slot5": 1
+    }
   }
 ]
