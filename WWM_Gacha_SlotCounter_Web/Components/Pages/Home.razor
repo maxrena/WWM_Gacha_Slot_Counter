@@ -6,26 +6,25 @@
 
 <PageTitle>WWM Gacha Slot Counter</PageTitle>
 
-<h1>Where Gacha Meets - Slot Counter</h1>
-<p>Made by your beloved Will - MaiMaiYeuEm</p>
+<div style="max-width: 900px; margin: 0 auto; padding: 15px;">
+    <div style="text-align: center; margin-bottom: 15px;">
+        <h2 style="margin: 0; color: #2C3E50;">🎰 WWM Gacha Slot Counter</h2>
+        <p style="margin: 5px 0; color: #7F8C8D; font-size: 14px;">Made by Will - MaiMaiYeuEm</p>
+        <h3 style="margin: 10px 0; color: #E74C3C;">Total Pulls: @GachaService.GetTotalPulls()</h3>
+    </div>
 
-<div style="margin: 20px 0;">
-    <h2>Total Pulls: @GachaService.GetTotalPulls()</h2>
-</div>
-
-<div style="margin-bottom: 20px;">
-    <button @onclick="@(() => activeTab = "click")" style="padding: 10px 20px; margin-right: 10px; background: @(activeTab == "click" ? "#3498DB" : "#ccc"); color: white; border: none; border-radius: 5px;">
-        Click to Input
-    </button>
-    <button @onclick="@(() => activeTab = "data")" style="padding: 10px 20px; background: @(activeTab == "data" ? "#3498DB" : "#ccc"); color: white; border: none; border-radius: 5px;">
-        Data Input
-    </button>
-</div>
+    <div style="display: flex; gap: 10px; margin-bottom: 15px; justify-content: center;">
+        <button @onclick="@(() => activeTab = "click")" style="padding: 10px 25px; background: @(activeTab == "click" ? "#3498DB" : "#95a5a6"); color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; transition: background 0.3s;">
+            👆 Click to Input
+        </button>
+        <button @onclick="@(() => activeTab = "data")" style="padding: 10px 25px; background: @(activeTab == "data" ? "#3498DB" : "#95a5a6"); color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; transition: background 0.3s;">
+            📝 Data Input
+        </button>
+    </div>
 
 @if (activeTab == "click")
 {
-    <div>
-        <h3>Click to Input</h3>
+    <div style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
         @for (int i = 1; i <= 5; i++)
         {
             int slotIndex = i;
@@ -33,24 +32,24 @@
             string? selected = GachaService.GetSlotSelection(slotName);
             int counter = GachaService.GetSlotCounter(slotName);
 
-            <div style="margin: 10px 0;">
-                <strong>Slot @slotIndex:</strong>
-                <button @onclick="@(() => SelectColor(slotName, "White"))" style="margin: 0 5px; padding: 8px; background: @(selected == "White" ? "#ddd" : "white"); border: 2px solid @(selected == "White" ? "black" : "#999");">⚪ White</button>
-                <button @onclick="@(() => SelectColor(slotName, "Purple"))" style="margin: 0 5px; padding: 8px; background: @(selected == "Purple" ? "#ddd" : "white"); border: 2px solid @(selected == "Purple" ? "black" : "#999");">🟣 Purple</button>
-                <button @onclick="@(() => SelectColor(slotName, "Gold"))" style="margin: 0 5px; padding: 8px; background: @(selected == "Gold" ? "#ddd" : "white"); border: 2px solid @(selected == "Gold" ? "black" : "#999");">🟡 Gold</button>
-                <span style="margin-left: 10px; color: @(selected != null ? "green" : "#999");">@(selected ?? "Select")</span>
-                <span style="margin-left: 10px;">Count: @counter</span>
+            <div style="display: flex; align-items: center; margin-bottom: 8px; gap: 8px; flex-wrap: wrap;">
+                <strong style="min-width: 60px;">Slot @slotIndex:</strong>
+                <button @onclick="@(() => SelectColor(slotName, "White"))" style="padding: 6px 12px; background: @(selected == "White" ? "#ecf0f1" : "white"); border: 2px solid @(selected == "White" ? "#2c3e50" : "#bdc3c7"); border-radius: 4px; cursor: pointer; font-size: 14px;">⚪ White</button>
+                <button @onclick="@(() => SelectColor(slotName, "Purple"))" style="padding: 6px 12px; background: @(selected == "Purple" ? "#ecf0f1" : "white"); border: 2px solid @(selected == "Purple" ? "#2c3e50" : "#bdc3c7"); border-radius: 4px; cursor: pointer; font-size: 14px;">🟣 Purple</button>
+                <button @onclick="@(() => SelectColor(slotName, "Gold"))" style="padding: 6px 12px; background: @(selected == "Gold" ? "#ecf0f1" : "white"); border: 2px solid @(selected == "Gold" ? "#2c3e50" : "#bdc3c7"); border-radius: 4px; cursor: pointer; font-size: 14px;">🟡 Gold</button>
+                <span style="color: @(selected != null ? "#27ae60" : "#95a5a6"); font-weight: bold; font-size: 14px;">@(selected ?? "Not Selected")</span>
+                <span style="background: #ecf0f1; padding: 4px 10px; border-radius: 4px; font-size: 14px;">Count: @counter</span>
             </div>
         }
         
-        <div style="margin: 20px 0;">
-            <button @onclick="HandleConfirm" style="padding: 15px 30px; margin-right: 10px; background: #3498DB; color: white; border: none; border-radius: 8px; font-size: 16px;">✅ Confirm</button>
-            <button @onclick="HandleBack" style="padding: 15px 30px; margin-right: 10px; background: #E67E22; color: white; border: none; border-radius: 8px; font-size: 16px;">⬅️ Back</button>
-            <button @onclick="HandleReset" style="padding: 15px 30px; background: #E74C3C; color: white; border: none; border-radius: 8px; font-size: 16px;">🔄 Reset All</button>
+        <div style="display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
+            <button @onclick="HandleConfirm" style="padding: 10px 20px; background: #27ae60; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;">✅ Confirm</button>
+            <button @onclick="HandleBack" style="padding: 10px 20px; background: #e67e22; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;">⬅️ Back</button>
+            <button @onclick="HandleReset" style="padding: 10px 20px; background: #e74c3c; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;">🔄 Reset All</button>
         </div>
 
-        <h4>📝 Gacha Log (Click to Input)</h4>
-        <div style="background: #f9f9f9; padding: 10px; max-height: 200px; overflow-y: auto;">
+        <h4 style="margin: 15px 0 10px 0; color: #2c3e50;">📝 Gacha Log</h4>
+        <div style="background: #ecf0f1; padding: 10px; max-height: 180px; overflow-y: auto; border-radius: 6px; font-size: 13px;">
             @{
                 var clickRecords = GachaService.GetPullHistory().Where(r => r.InputSource == "Click").ToList();
             }
@@ -62,7 +61,7 @@
             {
                 @foreach (var record in clickRecords)
                 {
-                    string colorsInfo = string.Join(", ", record.SlotColors.OrderBy(x => x.Key).Select(x => $"{x.Key}: {x.Value}"));
+                    string colorsInfo = string.Join(", ", record.SlotColors.OrderBy(x => x.Key).Select(x => $"{x.Key.Replace("Slot", "Slot ")}: {x.Value}"));
                     <div style="margin-bottom: 8px;">
                         Pull #@record.PullNumber (@record.Timestamp.ToString("yyyy-MM-dd HH:mm:ss")) - @colorsInfo
                     </div>
@@ -74,32 +73,31 @@
 
 @if (activeTab == "data")
 {
-    <div>
-        <h3>Data Input</h3>
+    <div style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
         @for (int i = 1; i <= 5; i++)
         {
             int slotIndex = i;
             string slotName = $"Slot{slotIndex}";
             string? selected = dataSlotSelections[slotName];
 
-            <div style="margin: 10px 0;">
-                <strong>Slot @slotIndex:</strong>
-                <button @onclick="@(() => SelectDataColor(slotName, "White"))" style="margin: 0 5px; padding: 8px; background: @(selected == "White" ? "#ddd" : "white"); border: 2px solid @(selected == "White" ? "black" : "#999");">⚪ White</button>
-                <button @onclick="@(() => SelectDataColor(slotName, "Purple"))" style="margin: 0 5px; padding: 8px; background: @(selected == "Purple" ? "#ddd" : "white"); border: 2px solid @(selected == "Purple" ? "black" : "#999");">🟣 Purple</button>
-                <button @onclick="@(() => SelectDataColor(slotName, "Gold"))" style="margin: 0 5px; padding: 8px; background: @(selected == "Gold" ? "#ddd" : "white"); border: 2px solid @(selected == "Gold" ? "black" : "#999");">🟡 Gold</button>
-                <span style="margin-left: 10px; color: @(selected != null ? "green" : "#999");">@(selected ?? "Select")</span>
-                <input type="number" @bind="dataSlotCounts[slotName]" min="0" placeholder="Count" style="margin-left: 10px; padding: 8px; width: 80px; border: 2px solid #3498DB; border-radius: 5px; text-align: center;" />
+            <div style="display: flex; align-items: center; margin-bottom: 8px; gap: 8px; flex-wrap: wrap;">
+                <strong style="min-width: 60px;">Slot @slotIndex:</strong>
+                <button @onclick="@(() => SelectDataColor(slotName, "White"))" style="padding: 6px 12px; background: @(selected == "White" ? "#ecf0f1" : "white"); border: 2px solid @(selected == "White" ? "#2c3e50" : "#bdc3c7"); border-radius: 4px; cursor: pointer; font-size: 14px;">⚪ White</button>
+                <button @onclick="@(() => SelectDataColor(slotName, "Purple"))" style="padding: 6px 12px; background: @(selected == "Purple" ? "#ecf0f1" : "white"); border: 2px solid @(selected == "Purple" ? "#2c3e50" : "#bdc3c7"); border-radius: 4px; cursor: pointer; font-size: 14px;">🟣 Purple</button>
+                <button @onclick="@(() => SelectDataColor(slotName, "Gold"))" style="padding: 6px 12px; background: @(selected == "Gold" ? "#ecf0f1" : "white"); border: 2px solid @(selected == "Gold" ? "#2c3e50" : "#bdc3c7"); border-radius: 4px; cursor: pointer; font-size: 14px;">🟡 Gold</button>
+                <span style="color: @(selected != null ? "#27ae60" : "#95a5a6"); font-weight: bold; font-size: 14px;">@(selected ?? "Not Selected")</span>
+                <input type="number" @bind="dataSlotCounts[slotName]" min="0" placeholder="Count" style="padding: 6px; width: 80px; border: 2px solid #3498db; border-radius: 4px; text-align: center; font-size: 14px;" />
             </div>
         }
         
-        <div style="margin: 20px 0;">
-            <button @onclick="HandleDataConfirm" style="padding: 15px 30px; margin-right: 10px; background: #3498DB; color: white; border: none; border-radius: 8px; font-size: 16px;">✅ Confirm</button>
-            <button @onclick="HandleDataBack" style="padding: 15px 30px; margin-right: 10px; background: #E67E22; color: white; border: none; border-radius: 8px; font-size: 16px;">⬅️ Back</button>
-            <button @onclick="HandleReset" style="padding: 15px 30px; background: #E74C3C; color: white; border: none; border-radius: 8px; font-size: 16px;">🔄 Reset All</button>
+        <div style="display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
+            <button @onclick="HandleDataConfirm" style="padding: 10px 20px; background: #27ae60; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;">✅ Confirm</button>
+            <button @onclick="HandleDataBack" style="padding: 10px 20px; background: #e67e22; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;">⬅️ Back</button>
+            <button @onclick="HandleReset" style="padding: 10px 20px; background: #e74c3c; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;">🔄 Reset All</button>
         </div>
 
-        <h4>📝 Gacha Log (Data Input)</h4>
-        <div style="background: #f9f9f9; padding: 10px; max-height: 200px; overflow-y: auto;">
+        <h4 style="margin: 15px 0 10px 0; color: #2c3e50;">📝 Gacha Log</h4>
+        <div style="background: #ecf0f1; padding: 10px; max-height: 180px; overflow-y: auto; border-radius: 6px; font-size: 13px;">
             @{
                 var dataRecords = GachaService.GetPullHistory().Where(r => r.InputSource == "Data").ToList();
             }
@@ -111,8 +109,8 @@
             {
                 @foreach (var record in dataRecords)
                 {
-                    string colorsInfo = string.Join(", ", record.SlotColors.OrderBy(x => x.Key).Select(x => $"{x.Key}: {x.Value}"));
-                    string countsInfo = string.Join(", ", record.SlotCounters.OrderBy(x => x.Key).Select(x => $"{x.Key}: {x.Value}"));
+                    string colorsInfo = string.Join(", ", record.SlotColors.OrderBy(x => x.Key).Select(x => $"{x.Key.Replace("Slot", "Slot ")}: {x.Value}"));
+                    string countsInfo = string.Join(", ", record.SlotCounters.OrderBy(x => x.Key).Select(x => $"{x.Key.Replace("Slot", "Slot ")}: {x.Value}"));
                     <div style="margin-bottom: 8px;">
                         Pull #@record.PullNumber (@record.Timestamp.ToString("yyyy-MM-dd HH:mm:ss"))<br/>
                         Colors: @colorsInfo<br/>
@@ -124,10 +122,13 @@
     </div>
 }
 
-<div style="margin-top: 30px;">
-    <h3>📊 Statistics</h3>
-    <p><strong>Session Pulls:</strong> @GachaService.GetSessionPulls()</p>
-    <p><strong>Average per session:</strong> @GachaService.GetAveragePulls().ToString("F1")</p>
+<div style="background: white; padding: 12px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-top: 15px;">
+    <h4 style="margin: 0 0 8px 0; color: #2c3e50;">📊 Statistics</h4>
+    <div style="font-size: 14px; color: #34495e;">
+        <p style="margin: 5px 0;"><strong>Session Pulls:</strong> @GachaService.GetSessionPulls()</p>
+        <p style="margin: 5px 0;"><strong>Average per session:</strong> @GachaService.GetAveragePulls().ToString("F1")</p>
+    </div>
+</div>
 </div>
 
 @code {
